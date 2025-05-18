@@ -1,0 +1,89 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{amsmath, amssymb, titling}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black]{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{cancel}
+\usepackage{fancyhdr, lastpage}
+\usepackage{fourier-orns}
+\usepackage{xcolor}
+\usepackage{nomencl}
+\makenomenclature
+\usepackage{etoolbox}
+\usepackage{sidecap}
+\usepackage{adjustbox}
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+\usepackage[T1]{fontenc}
+
+\sidecaptionvpos{figure}{c}
+\setlength{\headheight}{18.2pt}
+\setlength{\nomlabelwidth}{1.5cm}
+
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
+\renewcommand{\headrule}{\vspace{-5pt}\hrulefill\raisebox{-2.1pt}{\quad\leafleft\decoone\leafright\quad}\hrulefill}
+\newcommand{\parder}[2]{\frac{\partial {#1}}{\partial {#2}}}
+% \renewcommand\nomgroup[1]{%
+%   \item[\bfseries
+%   \ifstrequal{#1}{F}{Far--Away Properties}{%
+%   \ifstrequal{#1}{N}{Dimensionless Numbers}{%
+%   \ifstrequal{#1}{M}{Matrices}{%
+%   \ifstrequal{#1}{D}{Diagonals}{%
+%   \ifstrequal{#1}{V}{Vectors}{%
+%   \ifstrequal{#1}{P}{Dimensionless Average Properties}{}}}}}}
+% ]}
+
+\title{Intro to Turbulent Flow \\ HW1}
+\author{Almog Dobrescu ID 214254252}
+
+% \pagestyle{fancy}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\newpage
+
+\pagenumbering{roman}
+% \setcounter{page}{1}
+
+\tableofcontents
+\vfil
+\listoffigures
+\vfil
+\lstlistoflistings
+\newpage
+
+\printnomenclature
+\newpage
+
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Computing a Turbulent Flow}
+Considering a commercial airliner with a chord $L=5\left[\mathrm{m}\right]$ cruising at $U=250\left[\frac{\mathrm{m}}{\mathrm{sec}}\right]$.
+
+\subsection{Estimating boundary layer thickness $
+\delta$}
+a
+
+\newpage
+\appendix
+\section{Listing of The Computer Program}
+% \subsection{Parameters}
+% \begin{lstinputlisting}[captionpos=b,stringstyle=\color{magenta},frame=single, numbers=left, style=MatLab-editor, basicstyle=\mlttfamily\small, caption={Parameters file},mlshowsectionrules=true]{./matlab/parameters.m}
+% \end{lstinputlisting}
+
+% \subsection{Main Code}
+% \begin{lstinputlisting}[captionpos=b,stringstyle=\color{magenta},frame=single, numbers=left, style=MatLab-editor, basicstyle=\mlttfamily\small, caption={The main file},mlshowsectionrules=true]{./matlab/NM_hw1_CA.m}
+% \end{lstinputlisting}
+
+\end{document}
