@@ -145,6 +145,31 @@ The total number of grid point is therefore:
     N=N_xN_y=\boxed{4.7965\cdot10^{10}}
 \end{equation}
 
+\subsection{Instantaneous Flow Over One Eddy}
+The turnover time of one eddy is defined as:
+\begin{equation}
+    t_{large}=\frac{\delta}{U}
+\end{equation}
+The time step needs to be smaller then the smallest time step. Therefore:
+\begin{equation}
+    t_{small}=\frac{\eta_y}{v}
+\end{equation}
+From Eq.\ref{eq: small scales properties} we get:
+\begin{equation}
+    \frac{t_{large}}{t_{small}}\sim{Re}_\delta^\frac{1}{2}
+\end{equation}
+\begin{equation*}
+    \Downarrow
+\end{equation*}
+\begin{equation}
+    N_t=\frac{t_{large}}{t_{small}}\sim{Re}_\delta^\frac{1}{2}\sim1223\text{ steps}
+\end{equation}
+\underline{I finished this quistion in about 3 hours}
+
+\section{Heating a Room}
+
+\section{Help Karl Pearson}
+
 % Since the large scales appear to be in equilibrium from the point of view of the small scales:
 % \begin{equation}
 %     \begin{matrix}
