@@ -4,7 +4,7 @@ file: Turb_hw1.tex
 	@pdflatex Turb_hw1.tex > latex_temp.txt
 	@pdflatex Turb_hw1.tex > latex_temp.txt
 	@cp -r *.log logs/.
-	@rm *.aux *.ilg *.lof *.nlo *.nls *.out *.toc latex_temp.txt *.log *.fls *.fdb_latexmk *.lol
+	@rm *.aux *.ilg *.lof *.nlo *.nls *.out *.toc latex_temp.txt *.log *.fls *.fdb_latexmk *.lol *.bbl *.blg
 
 clean_after_vscode:
 	@test ! $(wildcard *.log) || cp -r *.log logs/.

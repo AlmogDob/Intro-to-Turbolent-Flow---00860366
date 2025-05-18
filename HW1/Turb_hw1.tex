@@ -3,6 +3,7 @@
 \usepackage{amsmath, amssymb, titling}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage[colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black]{hyperref}
+\usepackage{url}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -71,9 +72,88 @@
 \section{Computing a Turbulent Flow}
 Considering a commercial airliner with a chord $L=5\left[\mathrm{m}\right]$ cruising at $U=250\left[\frac{\mathrm{m}}{\mathrm{sec}}\right]$.
 
-\subsection{Estimating boundary layer thickness $
-\delta$}
-a
+\subsection{Estimating boundary layer thickness $\delta$}
+According to Prandtl's one-seventh power law:
+\begin{equation}
+    \frac{\delta}{x}\approx\frac{0.16}{Re_x^\frac{1}{7}}
+\end{equation}
+At the trailing edge, the thickness of the boundary layer is:
+\begin{equation}
+    \begin{matrix}
+        \displaystyle\frac{\delta}{L}\approx\frac{0.16}{Re_L^\frac{1}{7}} &,& \displaystyle Re_L=\frac{UL}{\nu}
+    \end{matrix}
+\end{equation}
+To calculate the kinematic viscosity of air, let's assume the airliner is cruising at $30[\mathrm{kft}]$. At this hight, the temperature is about $-44.3^\circ[C]$\cite{temp_distribution_at_atmosphere}. Hence, the kinematic viscosity is about $1\cdot10^{-5}$\cite{air_properties}
+\begin{equation}
+    Re_L=\frac{250\cdot5}{1\cdot10^{-5}}=1.25\cdot10^8
+\end{equation}
+\begin{equation*}
+    \Downarrow
+\end{equation*}
+\begin{equation}
+    \delta\approx\frac{0.16\cdot5}{\left(1\cdot10^{-5}\right)^\frac{1}{7}}=0.0558[\mathrm{m}]
+\end{equation}
+
+\subsection{Smallest Dynamically Important Scales}
+At the largest scales, the Reynolds number is very high, which indicates a turbulent regime. In a turbulent regime, there is no dissipation, which means:
+\begin{equation}
+ Re_\ell=\frac{u\ell}{\nu}\gg1
+\end{equation}
+However, we know that turbulent flows are dissipative, so there must be dissipation. For dissipation to accrue, the Reynolds number for the scales at which dissipation happens, the smallest scales, must be:
+\begin{equation}
+ Re_\eta=\frac{v\eta}{\nu}\sim1
+\end{equation}
+We can see that by fulfilling both demands for turbulent flow, there must be an energy transfer between scales, namely, an energy cascade.
+
+\subsection{Number of Grid Points}
+In order to accurately calculating the flow at the boundary layer, the size of one cell needs to be smaller then smallest eddy.
+From the energy cascade concept, we can conclude that the rate of change of the kinetic energy at the large scales:
+\begin{equation}
+    \frac{du^2}{dt}\sim\frac{u^2}{\displaystyle\frac{\ell}{u}}\sim\varepsilon
+    \label{eq: dissipation large scales}
+\end{equation}
+is balanced by the energy dissipated at the small scales. By dimensional analysis, we find that:
+\begin{equation}
+    \varepsilon\sim\nu\left(\frac{v}{\eta}\right)^2
+    \label{eq: dissipation small scales}
+\end{equation}
+By combining Eq.\ref{eq: dissipation large scales} and Eq.\ref{eq: dissipation small scales} we get:
+\begin{equation}
+    \begin{matrix}
+        \displaystyle\frac{\ell}{\eta}\sim{Re}_\ell^\frac{3}{4} & \text{and} & \displaystyle\frac{v}{u}\sim{Re}_\ell^{-\frac{1}{4}} & \text{and} & \displaystyle\frac{\displaystyle \frac{\ell}{u}}{\displaystyle \frac{\eta}{v}}\sim{Re}_\ell^\frac{1}{2}
+        \label{eq: small scales properties}
+    \end{matrix}
+\end{equation}
+From Eq.\ref{eq: small scales properties} we can calculate the size of one cell at the boundary layer:
+\begin{equation}
+    \eta_x\sim\frac{L}{{Re}_L^\frac{3}{4}}=\frac{5}{\left(1.25\cdot10^8\right)^\frac{3}{4}}=4.2295\cdot10^{-6}\left[\mathrm{m}\right]
+\end{equation}
+So, the number of grid point along the chord is:
+\begin{equation}
+    N_x\sim\frac{L}{\eta}=\frac{5}{4.2295\cdot10^{-6}}=1.1822\cdot10^{6}
+\end{equation}
+To calculate the number of grid point normal to the airfoil, we need to asstemate the small scale of the boundary layer:
+\begin{equation}
+    \eta_y\sim\frac{\delta}{{Re}_\delta\frac{3}{4}}=\frac{0.0558}{\left(\frac{U\delta}{\nu}\right)^\frac{3}{4}}=1.3745\cdot10^{-6}\left[\mathrm{m}\right]
+\end{equation}
+so the number of grid point normal to the airfoil:
+\begin{equation}
+    N_y\sim\frac{\delta}{\eta}=\frac{0.0558}{4.2295\cdot10^{-6}}=4.0574\cdot10^{4}
+\end{equation}
+The total number of grid point is therefore:
+\begin{equation}
+    N=N_xN_y=\boxed{4.7965\cdot10^{10}}
+\end{equation}
+
+% Since the large scales appear to be in equilibrium from the point of view of the small scales:
+% \begin{equation}
+%     \begin{matrix}
+%         \displaystyle\eta\sim\left(\frac{\nu^3}{\varepsilon}\right)^\frac{1}{4} & \text{and} & v\sim\left(\nu\varepsilon\right)^\frac{1}{4}
+%     \end{matrix}
+% \end{equation}
+
+\bibliographystyle{ieeetr}
+\bibliography{references}
 
 \newpage
 \appendix
