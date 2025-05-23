@@ -83,7 +83,7 @@ At the trailing edge, the thickness of the boundary layer is:
         \displaystyle\frac{\delta}{L}\approx\frac{0.16}{Re_L^\frac{1}{7}} &,& \displaystyle Re_L=\frac{UL}{\nu}
     \end{matrix}
 \end{equation}
-To calculate the kinematic viscosity of air, let's assume the airliner is cruising at $30[\mathrm{kft}]$. At this hight, the temperature is about $-44.3^\circ[C]$\cite{temp_distribution_at_atmosphere}. Hence, the kinematic viscosity is about $1\cdot10^{-5}$\cite{air_properties}
+To calculate the kinematic viscosity of air, let's assume the airliner is cruising at $30[\mathrm{kft}]$. At this hight, the temperature is about $-44.3^\circ[C]$ \cite{temp_distribution_at_atmosphere}. Hence, the kinematic viscosity is about $1\cdot10^{-5}$ \cite{air_properties}
 \begin{equation}
     Re_L=\frac{250\cdot5}{1\cdot10^{-5}}=1.25\cdot10^8
 \end{equation}
@@ -167,6 +167,72 @@ From Eq.\ref{eq: small scales properties} we get:
 \underline{I finished this quistion in about 3 hours}
 
 \section{Heating a Room}
+\subsection{Characteristic Time Scale}
+The one dimensional heat equation for a non moving field is:
+\begin{equation}
+    \parder{T}{t}=\alpha\parder{^2T}{x^2}
+\end{equation}
+We will use dimensional analysis to determined the characteristic time scale for heating the room.
+\begin{equation}
+    \begin{array}{rcl}
+        \displaystyle\frac{T_\infty}{t} & = & \displaystyle\alpha\frac{T_\infty}{L^2} \\\\
+        t & = & \displaystyle\frac{L^2}{\alpha}
+    \end{array}
+\end{equation}
+Assuming typical bedroom conditions \cite{air_thermal_diffusivity}:
+\begin{equation*}
+    \begin{matrix}
+        \displaystyle\left.\alpha\right|_\text{$T=25^\circ[C]$}=22.39\cdot10^{-6}\left[\frac{\mathrm{m}^2}{\mathrm{sec}}\right] &,& L=3\left[\mathrm{m}\right]
+    \end{matrix}
+\end{equation*}
+\begin{equation*}
+    \Downarrow
+\end{equation*}
+\begin{equation}
+    t=4.0197\cdot10^5\left[\mathrm{sec}\right]=4.6524\left[\mathrm{day}\right]
+\end{equation}
+
+\subsection{Induced Velocity Estimation}
+The momentum equation under Boussinesq approximation can be written as:
+\begin{equation}
+    \frac{D}{Dt}\vec{u}=-\frac{1}{\rho}\nabla p+\nu\nabla^2\vec{u}+g\frac{\Delta T}{T}
+\end{equation}
+Where:
+\begin{itemize}
+    \item $u$ is velocity induced by a space heater via buoyancy effects
+    \item $T$ is the local temperature
+    \item $\Delta T$ is the difference between $T$ and the newly heated air
+\end{itemize}
+Assuming the buoyancy-driven flow is turbulent:
+\begin{equation*}
+    Re\gg1
+\end{equation*}
+The momentum equation can be rewritten as:
+\begin{equation*}
+    \parder{\vec{u}}{t}+\vec{u}\cdot\nabla\vec{u}=-\frac{1}{\rho}\nabla p+\nu\nabla^2\vec{u}+g\frac{\Delta T}{T}
+\end{equation*}
+and by substituting the operators we get:
+\begin{equation}
+    \parder{u}{t}+u\cdot\parder{u}{x}=-\frac{1}{\rho}\parder{p}{x}+\nu\parder{^2u}{^2x}+g\frac{T-T_h}{T}
+\end{equation}
+In order to estimate the magnitude of the induced velocity we will use dimensional analysis:
+\begin{table}[H]
+    \center
+    \begin{tabular}{c|c|c|c|c}
+        $u=u_\infty\tilde{u}$ & $t=T\tilde{t}$ & $x=h\tilde{x}$ & $p=\Lambda\tilde{p}$ & $T=T_\infty\tilde{T}$
+    \end{tabular}
+\end{table}
+\begin{equation}
+    \frac{u_\infty}{T}\parder{\tilde{u}}{\tilde{t}}+\frac{u_\infty^2}{h}\tilde{u}\cdot\parder{\tilde{u}}{\tilde{x}}=-\frac{\Lambda}{\rho h}\parder{\tilde{p}}{\tilde{x}}+\frac{\nu u_\infty}{h^2}\parder{^2\tilde{u}}{^2\tilde{x}}+g\frac{\tilde{T}-\displaystyle\frac{T_h}{T_\infty}}{\tilde{T}}
+\end{equation}
+Multiplying by $\displaystyle\frac{h^2}{\nu u_\infty}$:
+\begin{equation}
+    \frac{h^2}{\nu u_\infty}\frac{u_\infty}{T}\parder{\tilde{u}}{\tilde{t}}+\frac{h^2}{\nu u_\infty}\frac{u_\infty^2}{h}\tilde{u}\cdot\parder{\tilde{u}}{\tilde{x}}=-\frac{h^2}{\nu u_\infty}\frac{\Lambda}{\rho h}\parder{\tilde{p}}{\tilde{x}}+\frac{h^2}{\nu u_\infty}\frac{\nu u_\infty}{h^2}\parder{^2\tilde{u}}{^2\tilde{x}}+\frac{h^2}{\nu u_\infty}g\frac{\tilde{T}-\displaystyle\frac{T_h}{T_\infty}}{\tilde{T}}
+\end{equation}
+Multiplying by $\displaystyle\frac{h^2}{\nu u_\infty}$:
+\begin{equation}
+    \underbrace{\frac{u_\infty h}{\nu}}_\text{$Re_h$}\underbrace{\frac{h}{u_\infty T}}_\text{$St_h$}\parder{\tilde{u}}{\tilde{t}}+\underbrace{\frac{h u_\infty}{\nu}}_\text{$Re_h$}\tilde{u}\cdot\parder{\tilde{u}}{\tilde{x}}=-\frac{h\Lambda}{\rho\nu u_\infty}\parder{\tilde{p}}{\tilde{x}}+\parder{^2\tilde{u}}{^2\tilde{x}}+\frac{h^2}{\nu u_\infty}g\frac{\tilde{T}-\displaystyle\frac{T_h}{T_\infty}}{\tilde{T}}
+\end{equation}
 
 \section{Help Karl Pearson}
 
