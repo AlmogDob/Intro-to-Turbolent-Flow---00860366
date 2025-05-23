@@ -132,7 +132,7 @@ So, the number of grid point along the chord is:
 \begin{equation}
     N_x\sim\frac{L}{\eta}=\frac{5}{4.2295\cdot10^{-6}}=1.1822\cdot10^{6}
 \end{equation}
-To calculate the number of grid point normal to the airfoil, we need to asstemate the small scale of the boundary layer:
+To calculate the number of grid point normal to the airfoil, we need to estimate the small scale of the boundary layer:
 \begin{equation}
     \eta_y\sim\frac{\delta}{{Re}_\delta\frac{3}{4}}=\frac{0.0558}{\left(\frac{U\delta}{\nu}\right)^\frac{3}{4}}=1.3745\cdot10^{-6}\left[\mathrm{m}\right]
 \end{equation}
@@ -162,7 +162,7 @@ From Eq.\ref{eq: small scales properties} we get:
     \Downarrow
 \end{equation*}
 \begin{equation}
-    N_t=\frac{t_{large}}{t_{small}}\sim{Re}_\delta^\frac{1}{2}\sim1223\text{ steps}
+    N_t=\frac{t_{large}}{t_{small}}\sim{Re}_\delta^\frac{1}{2}\sim1180\text{ steps}
 \end{equation}
 \underline{I finished this quistion in about 3 hours}
 
@@ -219,41 +219,63 @@ In order to estimate the magnitude of the induced velocity we will use dimension
 \begin{table}[H]
     \center
     \begin{tabular}{c|c|c|c|c}
-        $u=u_\infty\tilde{u}$ & $t=T\tilde{t}$ & $x=h\tilde{x}$ & $p=\Lambda\tilde{p}$ & $T=T_\infty\tilde{T}$
+        $u=u_h\tilde{u}$ & $t=T\tilde{t}$ & $x=h\tilde{x}$ & $p=\Lambda\tilde{p}$ & $T=T_\infty\tilde{T}$
     \end{tabular}
 \end{table}
 \begin{equation}
-    \frac{u_\infty}{T}\parder{\tilde{u}}{\tilde{t}}+\frac{u_\infty^2}{h}\tilde{u}\cdot\parder{\tilde{u}}{\tilde{x}}=-\frac{\Lambda}{\rho h}\parder{\tilde{p}}{\tilde{x}}+\frac{\nu u_\infty}{h^2}\parder{^2\tilde{u}}{^2\tilde{x}}+g\frac{\tilde{T}-\displaystyle\frac{T_h}{T_\infty}}{\tilde{T}}
+    \frac{u_h}{T}\parder{\tilde{u}}{\tilde{t}}+\frac{u_h^2}{h}\tilde{u}\cdot\parder{\tilde{u}}{\tilde{x}}=-\frac{\Lambda}{\rho h}\parder{\tilde{p}}{\tilde{x}}+\frac{\nu u_h}{h^2}\parder{^2\tilde{u}}{^2\tilde{x}}+g\frac{\tilde{T}-\displaystyle\frac{T_h}{T_\infty}}{\tilde{T}}
 \end{equation}
-Multiplying by $\displaystyle\frac{h^2}{\nu u_\infty}$:
+Multiplying by $\displaystyle\frac{h^2}{\nu u_h}$:
 \begin{equation}
-    \frac{h^2}{\nu u_\infty}\frac{u_\infty}{T}\parder{\tilde{u}}{\tilde{t}}+\frac{h^2}{\nu u_\infty}\frac{u_\infty^2}{h}\tilde{u}\cdot\parder{\tilde{u}}{\tilde{x}}=-\frac{h^2}{\nu u_\infty}\frac{\Lambda}{\rho h}\parder{\tilde{p}}{\tilde{x}}+\frac{h^2}{\nu u_\infty}\frac{\nu u_\infty}{h^2}\parder{^2\tilde{u}}{^2\tilde{x}}+\frac{h^2}{\nu u_\infty}g\frac{\tilde{T}-\displaystyle\frac{T_h}{T_\infty}}{\tilde{T}}
+    \frac{h^2}{\nu u_h}\frac{u_h}{T}\parder{\tilde{u}}{\tilde{t}}+\frac{h^2}{\nu u_h}\frac{u_h^2}{h}\tilde{u}\cdot\parder{\tilde{u}}{\tilde{x}}=-\frac{h^2}{\nu u_h}\frac{\Lambda}{\rho h}\parder{\tilde{p}}{\tilde{x}}+\frac{h^2}{\nu u_h}\frac{\nu u_h}{h^2}\parder{^2\tilde{u}}{^2\tilde{x}}+\frac{h^2}{\nu u_h}g\frac{\tilde{T}-\displaystyle\frac{T_h}{T_\infty}}{\tilde{T}}
 \end{equation}
 \begin{equation}
-    \underbrace{\frac{u_\infty h}{\nu}}_\text{$Re_h$}\underbrace{\frac{h}{u_\infty T}}_\text{$St_h$}\parder{\tilde{u}}{\tilde{t}}+\underbrace{\frac{h u_\infty}{\nu}}_\text{$Re_h$}\tilde{u}\cdot\parder{\tilde{u}}{\tilde{x}}=-\underbrace{\frac{u_\infty h}{\nu}}_\text{$Re_h$}\frac{\Lambda}{\rho u_\infty^2}\parder{\tilde{p}}{\tilde{x}}+\parder{^2\tilde{u}}{^2\tilde{x}}+\underbrace{\frac{u_\infty h}{\nu}}_\text{$Re_h$}\frac{h}{u_\infty^2}g\frac{\tilde{T}-\displaystyle\frac{T_h}{T_\infty}}{\tilde{T}}
+    \underbrace{\frac{u_h h}{\nu}}_\text{$Re_h$}\underbrace{\frac{h}{u_h T}}_\text{$St_h$}\parder{\tilde{u}}{\tilde{t}}+\underbrace{\frac{h u_h}{\nu}}_\text{$Re_h$}\tilde{u}\cdot\parder{\tilde{u}}{\tilde{x}}=-\underbrace{\frac{u_h h}{\nu}}_\text{$Re_h$}\frac{\Lambda}{\rho u_h^2}\parder{\tilde{p}}{\tilde{x}}+\parder{^2\tilde{u}}{^2\tilde{x}}+\underbrace{\frac{u_h h}{\nu}}_\text{$Re_h$}\frac{h}{u_h^2}g\frac{\tilde{T}-\displaystyle\frac{T_h}{T_\infty}}{\tilde{T}}
+\end{equation}
+For a buoyancy-driven turbulent flow, the dominant terms are the advection and buoyancy terms. Hence, we can estimate the following relations:
+\begin{equation}
+    \begin{matrix}
+        \displaystyle\frac{Re_h\Lambda}{\rho u_h^2}\sim1 &,& \displaystyle\frac{Re_h hg}{u_h^2}\sim Re_h \\
+        &\Downarrow& \\
+        \displaystyle\Lambda\sim\frac{\rho u_h^2}{Re_h} &,& \displaystyle u_h\sim\sqrt{hg}
+    \end{matrix}
+\end{equation}
+Therefore, the magnitude of the induced velocity, for $h=0.3[m]$ is:
+\begin{equation}
+    u_h\sim\sqrt{0.3\cdot9.81}=1.7155\left[\frac{\mathrm{m}}{\mathrm{sec}}\right]
 \end{equation}
 
+\subsection{Characteristic Time Scale For Room Heating}
+Let's consider a cloud of particles in turbulent flow. For two particles in that cloud, if the the two particles spread by Fickian diffusion, then their spread can by described by the diffusivity constant \emph{D}:
+\begin{equation}
+    r^2\sim Dt
+\end{equation}
+From Richardson's 4/3's law, we now:
+\begin{equation}
+    D_\text{turb}\sim\varepsilon^{\frac{1}{3}}r^{\frac{4}{3}}
+\end{equation}
+Where $\displaystyle\varepsilon=\frac{u^3}{L}$ from the lecture.\\
+Therefore, the characteristic time scale for heating the room is:
+\begin{equation}
+    t\sim\frac{L^2}{\varepsilon^{\frac{1}{3}}L^{\frac{4}{3}}}=\frac{L^2}{\displaystyle\frac{u_h}{L^{\frac{1}{3}}}L^{\frac{4}{3}}}=\frac{L}{u_h}=1.7487[sec]
+\end{equation}
+
+\newpage
 \section{Help Karl Pearson}
 
-% Since the large scales appear to be in equilibrium from the point of view of the small scales:
-% \begin{equation}
-%     \begin{matrix}
-%         \displaystyle\eta\sim\left(\frac{\nu^3}{\varepsilon}\right)^\frac{1}{4} & \text{and} & v\sim\left(\nu\varepsilon\right)^\frac{1}{4}
-%     \end{matrix}
-% \end{equation}
-
+\newpage
 \bibliographystyle{ieeetr}
 \bibliography{references}
 
 \newpage
 \appendix
 \section{Listing of The Computer Program}
-% \subsection{Parameters}
-% \begin{lstinputlisting}[captionpos=b,stringstyle=\color{magenta},frame=single, numbers=left, style=MatLab-editor, basicstyle=\mlttfamily\small, caption={Parameters file},mlshowsectionrules=true]{./matlab/parameters.m}
-% \end{lstinputlisting}
+\subsection{Q1}
+\begin{lstinputlisting}[captionpos=b,stringstyle=\color{magenta},frame=single, numbers=left, style=MatLab-editor, basicstyle=\mlttfamily\small, caption={Code for Q1},mlshowsectionrules=true]{./matlab_code/Q1.m}
+\end{lstinputlisting}
 
-% \subsection{Main Code}
-% \begin{lstinputlisting}[captionpos=b,stringstyle=\color{magenta},frame=single, numbers=left, style=MatLab-editor, basicstyle=\mlttfamily\small, caption={The main file},mlshowsectionrules=true]{./matlab/NM_hw1_CA.m}
-% \end{lstinputlisting}
+\subsection{Q2}
+\begin{lstinputlisting}[captionpos=b,stringstyle=\color{magenta},frame=single, numbers=left, style=MatLab-editor, basicstyle=\mlttfamily\small, caption={Code for Q2},mlshowsectionrules=true]{./matlab_code/Q2.m}
+\end{lstinputlisting}
 
 \end{document}
