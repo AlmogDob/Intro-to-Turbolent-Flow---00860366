@@ -214,12 +214,10 @@ for i = 1:length(distances)
     Q(i) = C(1,2);
 end
 
-% fig5 = figure('Name', '5', 'Position', [600, 250, 900, 600]);
-
 subplot(1,3,2) % #######################################################
 plot(1:length(distances), Q)
 
-xlabel('\# of steps [m]','FontSize',14,'Interpreter','latex')
+xlabel('\# of steps','FontSize',14,'Interpreter','latex')
 ylabel('autocovariance [m]','FontSize',14,'Interpreter','latex')
 title('Autocovariance as a Function of Steps')
 box on
@@ -229,7 +227,7 @@ grid minor
 subplot(1,3,3) % #######################################################
 plot(1:length(distances), Q/Q(1))
 
-xlabel('\# of steps [m]','FontSize',14,'Interpreter','latex')
+xlabel('\# of steps','FontSize',14,'Interpreter','latex')
 ylabel('autocovariance [m]','FontSize',14,'Interpreter','latex')
 title('Autocovariance as a Function of Steps')
 box on
@@ -296,7 +294,7 @@ for index = 1:length(num_of_walks_vec)
     lg{end+1} = sprintf('# of realization: %d', num_of_walks_vec(index));
 end
 
-xlabel('\# of steps [m]','FontSize',14,'Interpreter','latex')
+xlabel('\# of steps','FontSize',14,'Interpreter','latex')
 ylabel('autocovariance [m]','FontSize',14,'Interpreter','latex')
 title('Autocovariance as a Function of Steps - Full Ensemble')
 legend(lg)
@@ -326,7 +324,7 @@ for index = 1:length(num_of_walks_vec)
     lg{end+1} = sprintf('# of realization: %d', num_of_walks_vec(index));
 end
 
-xlabel('\# of steps [m]','FontSize',14,'Interpreter','latex')
+xlabel('\# of steps','FontSize',14,'Interpreter','latex')
 ylabel('autocovariance [m]','FontSize',14,'Interpreter','latex')
 title('Autocovariance as a Function of Steps - Full Ensemble')
 legend(lg)
