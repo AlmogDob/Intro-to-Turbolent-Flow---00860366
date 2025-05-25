@@ -1,6 +1,6 @@
 clc; clear; close all;
 
-%% PREFORM AND PRINT A RUN ################################################
+%% Q.3.a PREFORM AND PRINT A RUN ################################################
 step_size = 1; % [m]
 num_of_steps = 1e4;
 num_of_walks = 1e3;
@@ -34,7 +34,7 @@ grid on
 grid minor
 
 
-%% PREFORM AND PRINT A RUN AND PDF ########################################
+%% Q.3.a PREFORM AND PRINT A RUN AND PDF ########################################
 step_size = 1; % [m]
 num_of_steps     = 1e2;
 dr               = 0.5;
@@ -123,6 +123,7 @@ for index = 1:length(num_of_walks_vec)
     grid minor
 end
     
+%% Q.3.b Average Displacement ########################################
 
 
 
