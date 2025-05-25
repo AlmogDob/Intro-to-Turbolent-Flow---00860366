@@ -1,6 +1,6 @@
 clc; clear; close all;
 
-%% Q.3.a PREFORM AND PRINT A RUN ################################################
+%% Q.3.a PREFORM AND PRINT A RUN #######################################
 step_size = 1; % [m]
 num_of_steps = 1e4;
 num_of_walks = 1e3;
@@ -34,12 +34,12 @@ grid on
 grid minor
 
 
-%% Q.3.a PREFORM AND PRINT A RUN AND PDF ########################################
+%% Q.3.a PREFORM AND PRINT A RUN AND PDF ###############################
 step_size = 1; % [m]
 num_of_steps     = 1e2;
 dr               = 0.5;
-num_of_walks_vec = [4e5, 3e5, 2e5, 1e5, 7.5e4, 5e4, 2.5e4, 1e4, 7.5e3, 5e3, 2.5e3, 1e3];
-% num_of_walks_vec = [7.55e4, 5e4, 2.5e4, 1e4, 5e3, 1e3];
+% num_of_walks_vec = [4e5, 3e5, 2e5, 1e5, 7.5e4, 5e4, 2.5e4, 1e4, 7.5e3, 5e3, 2.5e3, 1e3];
+num_of_walks_vec = [7.55e4, 5e4, 2.5e4, 1e4, 5e3, 1e3];
 num_of_radiuses  = 1e2;
 
 end_x_vec_vec = {};
@@ -68,7 +68,7 @@ for index = 1:length(num_of_walks_vec)
     end_x_vec = end_x_vec_vec{index,1};
     end_y_vec = end_y_vec_vec{index,1};
 
-    subplot(1,3,1) % ######################################################
+    subplot(1,3,1) % ###################################################
     hold all
     p = plot(0,0, 'x', 'LineWidth', 1, 'Color', 'k', 'HandleVisibility', 'callback');
     plot(end_x_vec, end_y_vec, 'x', 'LineWidth', 2, 'Color', colors(index,:))
@@ -88,7 +88,7 @@ for index = 1:length(num_of_walks_vec)
     grid on
     grid minor
     
-    subplot(1,3,2) % ######################################################
+    subplot(1,3,2) % ###################################################
     hold all
     
     rs                  = rs_vec{length(num_of_walks_vec)-index+1, 1};
@@ -109,7 +109,7 @@ for index = 1:length(num_of_walks_vec)
     grid on
     grid minor
 
-    subplot(1,3,3) % ######################################################
+    subplot(1,3,3) % ###################################################
     
     rms(end+1) = sqrt(sum((analytical_solution-pdf_vec).^2));
     
@@ -123,7 +123,7 @@ for index = 1:length(num_of_walks_vec)
     grid minor
 end
     
-%% Q.3.b Average Displacement ########################################
+%% Q.3.b Average Displacement ##########################################
 % step_size = 1; % [m]
 % num_of_steps     = 1e2;
 % dr               = 0.5;
@@ -161,13 +161,84 @@ box on
 grid on
 grid minor
 
+%% Q.3.c autocovariance and autocorrelation ############################
+step_size = 1; % [m]
+number_of_steps = 1e2;
+
+fig4 = figure('Name', '4', 'Position', [450, 250, 900, 600]);
+
+hold all
+steps = [];
+distances = [];
+steps(1,:) = [0,0];
+for i=1:number_of_steps
+    [x,y] = one_step(steps(i, 1), steps(i, 2), step_size);
+    steps(end+1,:) = [x,y];
+    distances(end+1) = sqrt(x^2+y^2);
+end
+
+plot(steps(:,1), steps(:,2), 'x', 'LineWidth', 0.75, 'Color', 'k', 'HandleVisibility','off')
+quiver(steps(1:end-1,1), steps(1:end-1,2), diff(steps(:,1)), diff(steps(:,2)), 'MarkerSize', 0.5, 'Color', 'k', 'MaxHeadSize', 0.05, 'HandleVisibility','off')
+plot(steps(1,1),steps(1,2), '^', 'LineWidth', 3, 'Color', 'r')
+plot(steps(end,1),steps(end,2), 'squar', 'LineWidth', 3, 'Color', 'g')
+
+ax = gca;
+MaxX = max(abs(ax.XLim));
+MaxY = max(abs(ax.YLim));
+axis([-MaxX MaxX -MaxY MaxY]);
+
+xlabel('x position [m]','FontSize',14,'Interpreter','latex')
+ylabel('y position [m]','FontSize',14,'Interpreter','latex')
+title('One Random Walk')
+legend({'start','end'})
+axis square
+box on
+grid on
+grid minor
+
+Q = [];
+for i = 1:length(distances)
+    A = distances(1:length(distances)-i);
+    B = distances(1+i:length(distances));
+    C = cov(A, B);
+    Q(i) = C(1,2);
+end
+
+fig5 = figure('Name', '5', 'Position', [600, 250, 900, 600]);
+
+subplot(1,2,1) % #######################################################
+plot(1:length(distances), Q)
+
+xlabel('\# of steps [m]','FontSize',14,'Interpreter','latex')
+ylabel('autocovariance [m]','FontSize',14,'Interpreter','latex')
+title('Autocovariance as a Function of Steps')
+box on
+grid on
+grid minor
+
+subplot(1,2,2) % #######################################################
+plot(1:length(distances), Q/Q(1))
+
+xlabel('\# of steps [m]','FontSize',14,'Interpreter','latex')
+ylabel('autocovariance [m]','FontSize',14,'Interpreter','latex')
+title('Autocovariance as a Function of Steps')
+box on
+grid on
+grid minor
+
+%% Q.3.c ensemble ######################################################
 
 
 
 
 
 
-% FUNCTIONS ###############################################################
+
+
+
+
+
+% FUNCTIONS ############################################################
 function [des_x, des_y] = one_step(src_x, src_y, step_size)
     theta = rand()*2*pi;
     des_x = src_x + step_size * cos(theta);
