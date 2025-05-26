@@ -259,9 +259,80 @@ Therefore, the characteristic time scale for heating the room is:
 \begin{equation}
     t\sim\frac{L^2}{\varepsilon^{\frac{1}{3}}L^{\frac{4}{3}}}=\frac{L^2}{\displaystyle\frac{u_h}{L^{\frac{1}{3}}}L^{\frac{4}{3}}}=\frac{L}{u_h}=1.7487[sec]
 \end{equation}
+\underline{I finished this quistion in one day}
 
 \newpage
 \section{Help Karl Pearson}
+\subsection{Number of Realizations}
+A Drunk walker takes n random steps. In our case, $n=100$. In order to determine how many walks a walker need to take, in order for the PDF to converge, we will run tests for a range of realizations. \\
+The PDF is calculated by counting all realizations inside a circle with radius $r$ and a bigger circle with radius $r+dr$. In our case $dr=0.5$:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/graph1.png}
+    \caption{Calculating PDF}
+    \label{fig: calculating pdf}
+\end{figure}
+\noindent Lord Rayleigh's result for the ensemble PDF is:
+\begin{equation}
+    \displaystyle\frac{2}{n}re^{-\frac{r^2}{n}}
+\end{equation}
+\begin{itemize}
+    \item for a step of $1[m]$
+\end{itemize}
+\noindent We calculated the PDF function as a function of $r$ for different numbers of realizations and compared the difference between the calculated PDF and Rayleigh's equation. The RMS is calculated by:
+\begin{equation}
+    RMS=\sqrt{\displaystyle\sum_{r=0}^{r_{max}}\left[PDF_{analytical}\left(r\right)-PDF_{numerical}\left(r\right)\right]^2}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/graph2.png}
+    \caption{PDF function as a function of realizations}
+    \label{fig: pdf for different realizations}
+\end{figure}
+\noindent We can see that for number of realizations bigger then $10^5$, we can see that the RMS between the calculated PDF and Rayleigh's equation is small enough to consider converged. 
+
+\subsection{Average Displacement}
+From the lectures, the average displacement $\langle r\rangle$:
+\begin{equation}
+    \langle r\rangle=\mathbb{E}\left(r\right)=\int_{-\infty}^\infty{r\cdot PDF\left(r\right)dr}
+\end{equation}
+Hence, the average displacement as a function of number of realizations is:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/graph3.png}
+    \caption{Average Displacement as a function of realizations}
+    \label{fig: average displacement as a function of realizations}
+\end{figure}
+\noindent We can see that the average displacement converge to a value between 8.6 and 8.65.
+
+\subsection{Autocovariance and Autocorrelation}
+The covariance is calculated using the \emph{cov} function in \emph{MatLab}. The autocorrelation is the normalized autocovariance. The definition of the covariance is:
+\begin{equation}
+    Q_{uv}=\mathbb{E}\left[\left(u-\mu_u\right)\left(v-\mu_v\right)\right]
+\end{equation}
+The autocovariance is therefore:
+\begin{equation}
+    Q\left(\Delta\ell\right)=\mathbb{E}\left[\left(r\left(\ell\right)-\mu\right)\left(r\left(\ell+\Delta\ell\right)-\mu\right)\right]
+\end{equation}
+and the autocorrelation is:
+\begin{equation}
+    R\left(\Delta\ell\right)=\frac{Q\left(\Delta\ell\right)}{\max\left\{Q\left(\Delta\ell\right)\right\}}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/graph4.png}
+    \caption{Autocovariance and Autocorrelation}
+    \label{fig: autocovariance and autocorrelation}
+\end{figure}
+\noindent In order to determine how many walks are needed in the ensemble for the autocorrelation to converge we will calculate the autocorrelation over a range of realizations:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/graph5.png}
+    \caption{Autocovariance and Autocorrelation ensemble}
+    \label{fig: autocovariance and autocorrelation ensemble}
+\end{figure}
+\noindent We can see that for more that $10^4$ realizations, the autocovariance does not have any significant changes. \\
+\underline{I finished this quistion in 3 day}
 
 \newpage
 \bibliographystyle{ieeetr}

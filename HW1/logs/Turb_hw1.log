@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.14)  24 MAY 2025 20:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.14)  26 MAY 2025 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -679,25 +679,55 @@ File: ufuts.fd 2004/03/02 Fontinst v1.926 font definitions for U/futs.
 <to be read again> 
                    \relax 
 l.130 \end{equation}
-                     [1] [2] [3] [4] [5] (./Turb_hw1.bbl
+                     [1] [2] [3] [4]
+<images/graph1.png, id=202, 569.0058pt x 405.4347pt>
+File: images/graph1.png Graphic file (type png)
+<use images/graph1.png>
+Package pdftex.def Info: images/graph1.png  used on input line 271.
+(pdftex.def)             Requested size: 455.24411pt x 324.37294pt.
+<images/graph2.png, id=203, 920.9607pt x 416.2752pt>
+File: images/graph2.png Graphic file (type png)
+<use images/graph2.png>
+Package pdftex.def Info: images/graph2.png  used on input line 288.
+(pdftex.def)             Requested size: 455.24411pt x 205.7742pt.
+ [5 <./images/graph1.png (PNG copy)>]
+<images/graph3.png, id=212, 576.2328pt x 416.2752pt>
+File: images/graph3.png Graphic file (type png)
+<use images/graph3.png>
+Package pdftex.def Info: images/graph3.png  used on input line 302.
+(pdftex.def)             Requested size: 364.19667pt x 263.09956pt.
+
+[6 <./images/graph2.png (PNG copy)> <./images/graph3.png (PNG copy)>]
+<images/graph4.png, id=220, 828.2142pt x 288.1164pt>
+File: images/graph4.png Graphic file (type png)
+<use images/graph4.png>
+Package pdftex.def Info: images/graph4.png  used on input line 323.
+(pdftex.def)             Requested size: 455.24411pt x 158.37218pt.
+<images/graph5.png, id=221, 590.205pt x 412.6617pt>
+File: images/graph5.png Graphic file (type png)
+<use images/graph5.png>
+Package pdftex.def Info: images/graph5.png  used on input line 330.
+(pdftex.def)             Requested size: 318.66948pt x 222.80879pt.
+ [7 <./images/graph4.png (PNG copy)> <./images/graph5.png (PNG copy)>] (./Turb_
+hw1.bbl
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) [6]
+)) [8]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 274.
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 27
-4.
+nput line 345.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 34
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 274.
+(Font)              scaled to size 9.30756pt on input line 345.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 274.
+(Font)              scaled to size 8.50006pt on input line 345.
  (./matlab_code/Q1.m
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
@@ -718,7 +748,7 @@ Package textcomp Info: Symbol \textminus not provided by
 (./matlab_code/Q3.m
 LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
 (Font)              scaled to size 8.50006pt on input line 3.
- [7]
+ [9]
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
 (textcomp)             Default family used instead on input line 26.
@@ -727,23 +757,20 @@ Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             Default family used instead on input line 26.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 67.
- [8]
+(textcomp)             Default family used instead on input line 69.
+ [10]
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 80.
+(textcomp)             Default family used instead on input line 82.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 80.
-Package textcomp Info: Symbol \textminus not provided by
-(textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 94.
-Package textcomp Info: Symbol \textminus not provided by
-(textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 95.
+(textcomp)             Default family used instead on input line 82.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
 (textcomp)             Default family used instead on input line 96.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 97.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
 (textcomp)             Default family used instead on input line 98.
@@ -752,13 +779,10 @@ Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             Default family used instead on input line 100.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 105.
+(textcomp)             Default family used instead on input line 102.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 114.
-Package textcomp Info: Symbol \textminus not provided by
-(textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 116.
+(textcomp)             Default family used instead on input line 107.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
 (textcomp)             Default family used instead on input line 116.
@@ -767,34 +791,87 @@ Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             Default family used instead on input line 118.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 119.
- [9] [10]
+(textcomp)             Default family used instead on input line 118.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 187.
+(textcomp)             Default family used instead on input line 120.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 121.
+ [11]
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 161.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 163.
+ [12]
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
 (textcomp)             Default family used instead on input line 191.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 206.
+(textcomp)             Default family used instead on input line 191.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family fvm in TS1 encoding.
-(textcomp)             Default family used instead on input line 208.
-) 
+(textcomp)             Default family used instead on input line 198.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 198.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 211.
+ [13]
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 274.
+ [14]
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 293.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 299.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 310.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 322.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 329.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 340.
+ [15] [16]
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 410.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 414.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 429.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 431.
+)
+
 AED: lastpage setting LastPage
-[11] (./Turb_hw1.aux)
+[17] (./Turb_hw1.aux)
 Package rerunfilecheck Info: File `Turb_hw1.out' has not changed.
-(rerunfilecheck)             Checksum: 737F46D903BE5EB026D5C0B8DF87130B;2423.
+(rerunfilecheck)             Checksum: 7415AD884B374E110D8DD56A20F54E59;2992.
  ) 
 Here is how much of TeX's memory you used:
- 17336 strings out of 478287
- 276119 string characters out of 5849288
- 1010418 words of memory out of 5000000
- 34923 multiletter control sequences out of 15000+600000
+ 17655 strings out of 478287
+ 281067 string characters out of 5849288
+ 1078219 words of memory out of 5000000
+ 34992 multiletter control sequences out of 15000+600000
  488485 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,12n,120p,498b,2249s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 110i,12n,120p,547b,2249s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-
 super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
@@ -810,19 +887,20 @@ pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fou
 rier/fourier-orns.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fv
 mb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></us
-r/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/t
-ype1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sftt1095.pfb>
-Output written on Turb_hw1.pdf (13 pages, 380777 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+ftt1095.pfb>
+Output written on Turb_hw1.pdf (19 pages, 1996414 bytes).
 PDF statistics:
- 639 PDF objects out of 1000 (max. 8388607)
- 566 compressed objects within 6 object streams
- 305 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 986 PDF objects out of 1000 (max. 8388607)
+ 897 compressed objects within 9 object streams
+ 548 named destinations out of 1000 (max. 500000)
+ 162 words of extra memory for PDF output out of 10000 (max. 10000000)
 
