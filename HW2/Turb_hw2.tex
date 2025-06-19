@@ -239,8 +239,110 @@ Considering the differencing equation:
 \subsection{Ensemble Average $\langle u\rangle$}
 In order to calculate the ensemble average $\langle u\rangle$ we will assume that the limit $\lim_{n\rightarrow\infty}{u_n}$ exists. This means there is \emph{n} at which $u_{n+1}=u_n=u$. Hence:
 \begin{equation}
-    \langle u\rangle=\langle u_n+1\rangle=\langle ru-ru^2\rangle
+    \begin{array}{rcl}
+        \langle u\rangle & = & \langle u_{n+1}\rangle=\langle ru-ru^2\rangle= r\langle u\rangle-r\langle u^2\rangle \\\\
+        \left(1-r\right)\langle u\rangle& = & -r\langle u^2\rangle \\\\
+        \langle u\rangle& = & \displaystyle\frac{-r}{1-r}\langle u^2\rangle\qquad\blacksquare
+    \end{array}
 \end{equation}
+Where:
+\begin{itemize}
+    \item $\langle u\rangle$ is the first moment
+    \item $\langle u^2\rangle$ is the second moment
+\end{itemize}
+\subsection{Reynolds Stress}
+The Reynolds stresses can be represented as the second moment and form the first subsection, it can be written as:
+\begin{equation}
+    \langle u\cdot u\rangle=\langle u^2\rangle=\frac{1-r}{-r}\langle u\rangle
+\end{equation}
+The Reynolds stress depends on the ensemble average and the variable \emph{r}.
+\subsection{Solving For $\langle u\rangle$}
+The first moment depends on the second moment so we can't solve it directly. Let's try to solve for the second moment:
+\begin{equation}
+    \begin{array}{rcl}
+        \langle u\cdot u\rangle & = & \langle\left(ru-ru^2\right)\left(ru-ru^2\right)\rangle \\\\
+        & = & \langle r^2u^2-r^2u^3-r^2u^3+r^2u^4\rangle \\\\
+        & = & \langle r^2u^2\rangle-\langle 2r^2u^3\rangle+\langle r^2u^4\rangle \\\\
+        & = & r^2\left(\langle u^2\rangle-\langle 2u^3\rangle+\langle u^4\rangle\right)
+    \end{array}
+\end{equation}
+We see that the second moment depends on the third and fourth moments. We can conclude that each moment depends on a higher-order moment and this 'series' continues to infinity. Hence we can not solve for the first moment directly. \\
+By assuming that u is normaly distributed, $N\left[\mu,\sigma\right]$, we get the following central moments: % lecture pg.24 table.1 + wiqipedia: https://en.wikipedia.org/wiki/Moment_(mathematics) & https://en.wikipedia.org/wiki/Covariance
+\begin{table}[H]
+    \center
+    \begin{tabular}{c||c||c||c||c}
+        $\langle u\rangle=\mu$ & $\sigma^2=\mathbb{E}\left\{\left(u-\mu\right)^2\right\}$ & $Q_{\left(u,v\right)}=\mathbb{E}\left\{\left(u-\mu_u\right)\left(v-\mu_v\right)\right\}$ & $\mu_3=\mathbb{E}\left\{\left(u-\mu\right)^3\right\}$ & $\mu_4=\mathbb{E}\left\{\left(u-\mu\right)^4\right\}$
+    \end{tabular}
+\end{table}
+\begin{equation*}
+    \Downarrow
+\end{equation*}
+\begin{equation}
+    \begin{array}{c}
+        \sigma^2=Q_{\left(u,u\right)}=\langle u^2\rangle-\langle u\rangle^2 \\\\
+        \langle u^2\rangle=\langle u\rangle^2+\sigma^2 \\\\
+        \langle u^2\rangle=\mu^2+\sigma^2
+    \end{array}
+\end{equation}
+We also know that: 
+\begin{equation}
+    \begin{array}{rcl}
+        \langle u^2\rangle & = & r^2\left(\langle u^2\rangle-\langle 2u^3\rangle+\langle u^4\rangle\right) \\\\
+        \langle u^2\rangle & = & \displaystyle\frac{r^2}{1-r^2}\left(-2\langle u^3\rangle+\langle u^4\rangle\right)
+        \label{eq: second moment}
+    \end{array}
+\end{equation}
+What we have here are non central moments. For normal distribution we know that:
+% \begin{equation}
+%     \begin{matrix}
+%         \displaystyle\langle u^3\rangle=\frac{b^{3+1}-a^{3+1}}{\left(3+1\right)\left(b-a\right)} & \displaystyle\text{and} & \displaystyle\langle u^4\rangle=\frac{b^{4+1}-a^{4+1}}{\left(4+1\right)\left(b-a\right)}
+%     \end{matrix}
+%     \label{eq: third and fourth moments}
+% \end{equation}
+% Where:
+% \begin{itemize}
+%     \item $a=0$
+%     \item $b=1$
+% \end{itemize}
+% \begin{equation*}
+%     \begin{matrix}
+%         \displaystyle\langle u^3\rangle=\frac{1}{4} & \displaystyle\text{and} & \displaystyle\langle u^4\rangle=\frac{1}{5}
+%     \end{matrix}
+% \end{equation*}
+% Substituting Eq.\ref{eq: third and fourth moments} into Eq.\ref{eq: second moment}:
+% \begin{equation}
+%     \begin{array}{c}
+%         \langle u^2\rangle=\displaystyle\frac{r^2}{1-r^2}\left(-2\frac{1}{4}+\frac{1}{5}\right) \\\\
+%         \text{and} \\\\
+%         \langle u\rangle=\displaystyle\frac{r}{r-1}\langle u^2\rangle \\\\
+%         \Downarrow \\
+%         \mu=\displaystyle \frac{-r^3}{\left(r-1\right)\left(1-r^2\right)}\frac{3}{10}
+%     \end{array}
+% \end{equation}
+\begin{equation}
+    \begin{matrix}
+        \langle u^3\rangle=\mu^3+3\mu\sigma^2 & \text{and} & \langle u^4\rangle=\mu^4+6\mu^2\sigma^2+3\sigma^4
+    \end{matrix}
+    \label{eq: third and fourth moments}
+\end{equation}
+Substituting Eq.\ref{eq: third and fourth moments} into Eq.\ref{eq: second moment}:
+\begin{equation}
+    \begin{array}{c}
+        \mu^2+\sigma^2=\displaystyle\frac{r^2}{1-r^2}\left(-2\left(\mu^3+3\mu\sigma^2\right)+\mu^4+6\mu^2\sigma^2+3\sigma^4\right) \\\\
+        \text{and} \\\\
+        \mu=\displaystyle\frac{r}{r-1}\left(\mu^2+\sigma^2\right)
+    \end{array}
+\end{equation}
+The ensemble average can be calculated using a numerical system of equations solver.
+\subsection{Numerical Verification}
+Let's compare the analytical solution to a numerical one:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/Q2.4.png}
+    \caption{Calculating PDF}
+    \label{fig: calculating pdf}
+\end{figure}
+\noindent The figure shows that indeed the analytically calculated solution feet the numerical one for all $1<r<3$. This means that the ensemble average can be consider as normally distributed for $r<3$.
 
 \newpage
 \section{Scalar TKE Equation}
@@ -285,7 +387,7 @@ By subtracting Eq.\ref{eq: ensemble} from Eq.\ref{eq: given equation} we get:
         \label{eq: subtraction equation}
     \end{array}
 \end{equation}
-By assuming incompressible flow and applying the ensemble average and substraction to the overall continuity equation, $\displaystyle\parder{\tilde{u}}{x_j}=0$ yields: %lecture pg.43 eq.21
+By assuming incompressible flow and applying the ensemble average and substraction from the overall continuity equation, $\displaystyle\parder{\tilde{u}}{x_j}=0$ yields: %lecture pg.43 eq.21
 \begin{equation}
     \begin{matrix}
         \displaystyle\parder{}{x_j}\bar{u}_j=0 & \text{and} & \displaystyle\parder{}{x_j}u_j=0 & \text{and} & \displaystyle\parder{\overline{Tu_j}}{x_j}=0
@@ -306,9 +408,29 @@ By multiplying by \emph{T} we get:
 and ensemble averaging the equation:
 \begin{equation}
     \begin{array}{c}
-        \overline{\displaystyle \frac{1}{2}\parder{T^2}{t}+Tu_j\parder{\bar{T}}{x_j}+T\bar{u}_j\parder{T}{x_j}+Tu_j\parder{T}{x_j}=T\alpha\parder{^2T}{x^2_j}}
+        \overline{\displaystyle \frac{1}{2}\parder{T^2}{t}+Tu_j\parder{\bar{T}}{x_j}+T\bar{u}_j\parder{T}{x_j}+Tu_j\parder{T}{x_j}=T\alpha\parder{^2T}{x^2_j}} \\\\
+        \displaystyle\frac{1}{2}\parder{\overline{T^2}}{t}+\overline{Tu_j}\parder{\bar{T}}{x_j}+\frac{1}{2}\bar{u}_j\parder{\overline{T^2}}{x_j}+\overline{\frac{1}{2}u_j\parder{T^2}{x_j}}=\overline{T\alpha\parder{^2T}{x^2_j}} \\\\
+        \displaystyle\frac{1}{2}\frac{D\overline{T^2}}{Dt}+\overline{Tu_j}\parder{\bar{T}}{x_j}+\overline{\frac{1}{2}u_j\parder{T^2}{x_j}}=\overline{T\alpha\parder{^2T}{x^2_j}}
     \end{array}
 \end{equation}
+Notice that:
+\begin{equation}
+    \overline{\parder{}{x_j}\left(T\parder{T}{x_j}\right)}=\overline{\parder{T}{x_j}\parder{T}{x_j}+T\parder{^2T}{x_j^2}}=\overline{\parder{T}{x_j}\parder{T}{x_j}}+\overline{T\parder{^2T}{x_j^2}}
+\end{equation}
+\begin{equation}
+    \begin{array}{c}
+        \displaystyle\frac{1}{2}\frac{D\overline{T^2}}{Dt}+\overline{Tu_j}\parder{\bar{T}}{x_j}+\overline{\frac{1}{2}u_j\parder{T^2}{x_j}}=\alpha\overline{\parder{}{x_j}\left(T\parder{T}{x_j}\right)}-\underbrace{\alpha\overline{\parder{T}{x_j}\parder{T}{x_j}}}_{\hat{\varepsilon}\sim\varepsilon}
+    \end{array}
+\end{equation}
+This term is considered to be the temperature pseudo-dissipation as seen in the lecture (Pg.45) and from here on will be considered as the dissipation. Hence we can declare the rate at which these temperature fluctuations dissipate as:
+\begin{equation}
+    \boxed{\varepsilon\propto\alpha\overline{\parder{T}{x_j}\parder{T}{x_j}}}
+\end{equation}
 
+\newpage
+\appendix
+\section{Listing of The Computer Program}
+\begin{lstinputlisting}[captionpos=b,stringstyle=\color{magenta},frame=single, numbers=left, style=MatLab-editor, basicstyle=\mlttfamily\small, caption={Code for Q1},mlshowsectionrules=true]{./matlab_code/Turb_hw2.m}
+\end{lstinputlisting}
 
 \end{document}
